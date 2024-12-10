@@ -7,7 +7,8 @@ import Layout from './Layout'
 import About from './components/about/About'
 import Contact from './components/contact/Contact';
 import Home from './components/home/Home'
-import { RouterProvider } from 'react-router'
+import { Route, RouterProvider, createRoutesFromElements } from 'react-router'
+import User from './components/user/User'
 
 
 // Note that createBrowserRouter takes in an array of path JS objects
@@ -39,10 +40,24 @@ const router = createBrowserRouter( [
 ],
 )
 
-// Using Creat
+// Using CreateBrowserRouter, we can define paths in another way
+// ie, using createRoutesFromElements 
+// (its similar to nested Router, routes, route thing we did earlier)
+
+const router2 = createBrowserRouter( 
+  createRoutesFromElements(
+    < Route path = '/' element={ < Layout />} >
+      < Route path='' element={ < Home />} />
+      < Route path='about' element={ < About />} />
+      < Route path='contact' element={ < Contact />} />
+      < Route path='user/:id' element={ < User />} />
+
+    </Route>
+  )
+)
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    < RouterProvider router={router} />
+    < RouterProvider router={router2} />
   </StrictMode>,
 )
