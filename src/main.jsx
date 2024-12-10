@@ -9,6 +9,7 @@ import Contact from './components/contact/Contact';
 import Home from './components/home/Home'
 import { Route, RouterProvider, createRoutesFromElements } from 'react-router'
 import User from './components/user/User'
+import GithubProfile from './components/githubProfile/GithubProfile'
 
 
 // Note that createBrowserRouter takes in an array of path JS objects
@@ -51,6 +52,7 @@ const router2 = createBrowserRouter(
       < Route path='about' element={ < About />} />
       < Route path='contact' element={ < Contact />} />
       < Route path='user/:id' element={ < User />} />
+      < Route path='github' element={ < GithubProfile />} />
 
     </Route>
   )

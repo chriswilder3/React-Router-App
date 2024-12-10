@@ -11,13 +11,13 @@ function User() {
 
     //                 // Ex : params['id'] or params.id
 
-    // Or We could receive it just like a hook, since its actually
-    // an object, receive the single param directly inside {}
+    // Or We could receive it just like a hook, since it returns
+    // an object, destructure params directly inside {}
 
     const {id} = useParams()
 
   return (
-    <div>User : {id} </div>
+    <div className='m-4 p-4'>User : {id} </div>
   )
 }
 
